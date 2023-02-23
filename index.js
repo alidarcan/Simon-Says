@@ -53,7 +53,7 @@ function game() {
 function endGame() {
   $(".btn").off("click");
   flash();
-  $("#level-title").html("Game Over!<br>Press a Key to Restart");
+  $("#level-title").html("Game Over<br>Restart ?");
   startGame();
 }
 
@@ -80,13 +80,17 @@ function startGame() {
   simonArr = [];
   answerArr = [];
   currentLevel = 1;
-  $(document).on("keydown", function () {
+  $("#level-title").on("click", activateRestart);
+  $(document).on("keydown", activateRestart);
+
+  function activateRestart() {
     setTimeout(function () {
       game();
     }, 1000);
     $("#level-title").text("Level " + currentLevel);
     $(document).off("keydown");
-  });
+    $("#level-title").off("click");
+  }
 }
 
 startGame();
