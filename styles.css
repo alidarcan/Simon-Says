@@ -1,42 +1,72 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
   text-align: center;
   background-color: #011F3F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
-  margin: 1%;
-  line-height: 1.5;
+  margin-top: 1rem;
   color: #FEF2BF;
-  height: 20vh;
+  flex: 1;
 }
 
 .container {
-  display: block;
-  width: 80%;
+  flex-grow: 1;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 50px;
   margin: auto;
-  height: 70vh;
+
 }
 
 .btn {
-  margin: 1.5%;
   display: inline-block;
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
   border: 10px solid black;
   border-radius: 20%;
 }
 
-@media screen and (max-width: 992px) {
-  .btn {
-    height: 300px;
-    width: 300px;
-
-  }
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
+p{
+  color: #FEF2BF;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+  .btn {
+    height: 400px;
+    width: 400px;
+  }
+
+  .container {
+    width: 90%;
+  }
+  #level-title {
+    font-size: 4rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+}
 
 .game-over {
   background-color: red;
